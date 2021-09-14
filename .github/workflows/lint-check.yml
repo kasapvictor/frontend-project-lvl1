@@ -4,7 +4,7 @@
       branches:
         - main
   jobs:
-    check:
+    build:
       runs-on: ubuntu-latest
 
       strategy:
@@ -12,6 +12,8 @@
           node: [13.x, 14.x, 15.x]
 
       steps:
+        - uses: actions/checkout@v2
+
         - name: Install
           run: make install
 
