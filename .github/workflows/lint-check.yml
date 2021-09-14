@@ -5,6 +5,7 @@
         - main
   jobs:
     build:
+
       runs-on: ubuntu-latest
 
       strategy:
@@ -14,8 +15,8 @@
       steps:
         - uses: actions/checkout@v2
 
-        - name: Install
+        - name: Run make Install
           run: make install
 
-        - name: ESLint tests
+        - name: Run make lint
           run: make lint
