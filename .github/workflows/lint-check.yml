@@ -9,7 +9,7 @@
 
       strategy:
         matrix:
-          node: [ 13.x, 14.x, 15.x ]
+          node: [13.x, 14.x, 15.x]
 
       steps:
         - name: Install
