@@ -4,8 +4,9 @@
 [![lint-check](https://github.com/kasapvictor/frontend-project-lvl1/actions/workflows/lint-check.yml/badge.svg)](https://github.com/kasapvictor/frontend-project-lvl1/actions/workflows/lint-check.yml)
 
 ## Brain Game Even
-1. Type your name.
-2. Then answer if number is even 'yes' otherwise 'no'.
+1. Terminal: `brain-even`;
+2. Type your name.
+3. Then answer if number is even 'yes' otherwise 'no'.
 
 For example:
 
