@@ -7,5 +7,5 @@ export default () => {
   const question = getRandom();
   const answer = isEven(question);
 
-  return {question, answer, rules}
+  return { question, answer, rules };
 };

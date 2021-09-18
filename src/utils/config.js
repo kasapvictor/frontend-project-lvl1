@@ -14,9 +14,9 @@ const CONFIG = {
   statistic: '--- STATISTIC ---',
   startRound: 1,
   limitRound: 3,
-  round:1,
+  round: 1,
   correct: 0,
-  wrong: 0
+  wrong: 0,
 };
 
 export default CONFIG;

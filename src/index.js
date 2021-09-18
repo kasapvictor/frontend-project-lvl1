@@ -1,20 +1,29 @@
-import readlineSync from "readline-sync";
-import CONFIG from "./utils/config.js";
+import readlineSync from 'readline-sync';
+import CONFIG from './utils/config.js';
 
-const greeting = (game) => {
-  console.log(CONFIG.greeting);
+const end = () => {
+  if (CONFIG.correct > CONFIG.wrong) {
+    console.log(CONFIG.winText());
+  } else {
+    console.log(CONFIG.failText);
+  }
 
-  CONFIG.name = readlineSync.question(CONFIG.askName);
+  console.log(CONFIG.statistic);
+  console.log('Correct:', CONFIG.correct);
+  console.log('Wrong:', CONFIG.wrong);
+};
 
-  console.log(CONFIG.hello());
-
-  CONFIG.game = game;
-
-  process();
-}
+const check = (correct = false) => {
+  if (correct) {
+    CONFIG.correct += 1;
+    console.log(CONFIG.correctText);
+  } else {
+    CONFIG.wrong += 1;
+    console.log(CONFIG.incorrectText);
+  }
+};
 
 const process = () => {
-
   if (!CONFIG.game) return;
 
   const game = CONFIG.game();
@@ -34,28 +43,18 @@ const process = () => {
   } else {
     end();
   }
-}
+};
 
-const check = (correct = false) => {
-  if (correct) {
-    CONFIG.correct += 1;
-    console.log(CONFIG.correctText);
-  } else {
-    CONFIG.wrong += 1;
-    console.log(CONFIG.incorrectText);
-  }
-}
+const greeting = (game) => {
+  console.log(CONFIG.greeting);
 
-const end = () => {
-  if (CONFIG.correct > CONFIG.wrong) {
-    console.log(CONFIG.winText());
-  } else {
-    console.log(CONFIG.failText);
-  }
+  CONFIG.name = readlineSync.question(CONFIG.askName);
 
-  console.log(CONFIG.statistic);
-  console.log('Correct:', CONFIG.correct);
-  console.log('Wrong:', CONFIG.wrong);
-}
+  console.log(CONFIG.hello());
+
+  CONFIG.game = game;
+
+  process();
+};
 
 export default greeting;
