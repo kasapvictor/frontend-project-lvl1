@@ -20,4 +20,7 @@ For example:
 1. Terminal: `brain-calc`;
 2. Type your name.
 3. Then type correct answer of math expression
+
+For example:
+
 [![asciicast](https://asciinema.org/a/PkYi7cnEZM0Kj81ZAoxa1NqXZ.svg)](https://asciinema.org/a/PkYi7cnEZM0Kj81ZAoxa1NqXZ)
