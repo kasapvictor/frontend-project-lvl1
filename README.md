@@ -16,7 +16,7 @@ For example:
 
 ---
 
-## Brain calc
+## Brain Game Calc
 1. Terminal: `brain-calc`;
 2. Type your name.
 3. Then type correct answer of math expression
