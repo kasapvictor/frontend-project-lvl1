@@ -15,3 +15,9 @@ For example:
 [![asciicast](https://asciinema.org/a/96EeDfoCOHTlSySuIk3pJz6PP.svg)](https://asciinema.org/a/96EeDfoCOHTlSySuIk3pJz6PP)
 
 ---
+
+## Brain calc
+1. Terminal: `brain-calc`;
+2. Type your name.
+3. Then type correct answer of math expression
+[![asciicast](https://asciinema.org/a/PkYi7cnEZM0Kj81ZAoxa1NqXZ.svg)](https://asciinema.org/a/PkYi7cnEZM0Kj81ZAoxa1NqXZ)
