@@ -5,7 +5,7 @@ const end = () => {
   if (CONFIG.correct > CONFIG.wrong) {
     console.log(CONFIG.winText());
   } else {
-    console.log(CONFIG.failText);
+    console.log(CONFIG.failText());
   }
 
   console.log(CONFIG.statistic);
@@ -13,13 +13,13 @@ const end = () => {
   console.log('Wrong:', CONFIG.wrong);
 };
 
-const check = (correct = false) => {
+const check = (userAnswer, answer, correct = false) => {
   if (correct) {
     CONFIG.correct += 1;
     console.log(CONFIG.correctText);
   } else {
     CONFIG.wrong += 1;
-    console.log(CONFIG.incorrectText);
+    console.log(CONFIG.incorrectText(userAnswer, answer));
   }
 };
 
@@ -34,7 +34,7 @@ const process = () => {
 
   const userAnswer = readlineSync.question(CONFIG.askAnswer);
 
-  check(userAnswer === game.answer);
+  check(userAnswer, game.answer, userAnswer === game.answer);
 
   CONFIG.round += 1;
 
