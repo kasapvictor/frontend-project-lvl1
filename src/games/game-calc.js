@@ -24,11 +24,11 @@ export default () => {
   const SYMBOL = ['+', '-', '*'];
   const a = getRandom();
   const b = getRandom();
-  const symbol = SYMBOL[getRandom(0, 2)];
+  const s = SYMBOL[getRandom(0, 2)];
 
   const rules = 'What is the result of the expression?\n';
-  const answer = `${calc(a, b, symbol)}`;
-  const question = `${a} ${symbol} ${b}`;
+  const answer = `${calc(a, b, s)}`;
+  const question = `${a} ${s} ${b}`;
 
   return { question, answer, rules };
 };
