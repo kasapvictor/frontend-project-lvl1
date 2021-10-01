@@ -24,3 +24,14 @@ For example:
 For example:
 
 [![asciicast](https://asciinema.org/a/PkYi7cnEZM0Kj81ZAoxa1NqXZ.svg)](https://asciinema.org/a/PkYi7cnEZM0Kj81ZAoxa1NqXZ)
+
+---
+
+## Brain Game GCD
+1. Terminal: `brain-gcd`;
+2. Type your name.
+3. Find the greatest common divisor of given numbers
+
+For example:
+
+[![asciicast](https://asciinema.org/a/PFvuZPZGRve6rMcHkrLu4SZct.svg)](https://asciinema.org/a/PFvuZPZGRve6rMcHkrLu4SZct)
