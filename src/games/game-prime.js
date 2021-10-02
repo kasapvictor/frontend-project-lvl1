@@ -14,7 +14,7 @@ const isPrime = (n) => {
 };
 
 export default () => {
-  const rules = 'Answer "yes" if given number is prime. Otherwise answer "no".\n';
+  const rules = 'Answer "yes" if given number is prime. Otherwise answer "no".';
   const n = getRandom();
   const question = `${n}`;
   const answer = `${isPrime(n) ? 'yes' : 'no'}`;

@@ -26,7 +26,7 @@ const getProgression = () => {
 
 export default () => {
   const task = getProgression();
-  const rules = 'What number is missing in the progression?\n';
+  const rules = 'What number is missing in the progression?';
   const question = task.progression;
   const { answer } = task;
 
