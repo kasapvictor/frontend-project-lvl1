@@ -46,3 +46,14 @@ For example:
 For example:
 
 [![asciicast](https://asciinema.org/a/IlFLSoc8SvkApVQlAa6af0DOm.svg)](https://asciinema.org/a/IlFLSoc8SvkApVQlAa6af0DOm)
+
+---
+
+## Brain Game Prime
+1. Terminal: `brain-prime`;
+2. Type your name.
+3. Answer "yes" if given number is prime. Otherwise answer "no".
+
+For example:
+
+[![asciicast](https://asciinema.org/a/tepavyWXU7mtW93syhfTGp5bu.svg)](https://asciinema.org/a/tepavyWXU7mtW93syhfTGp5bu)
