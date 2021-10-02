@@ -35,3 +35,14 @@ For example:
 For example:
 
 [![asciicast](https://asciinema.org/a/PFvuZPZGRve6rMcHkrLu4SZct.svg)](https://asciinema.org/a/PFvuZPZGRve6rMcHkrLu4SZct)
+
+---
+
+## Brain Game Progression
+1. Terminal: `brain-progression`;
+2. Type your name.
+3. What number is missing in the progression?
+
+For example:
+
+[![asciicast](https://asciinema.org/a/IlFLSoc8SvkApVQlAa6af0DOm.svg)](https://asciinema.org/a/IlFLSoc8SvkApVQlAa6af0DOm)
