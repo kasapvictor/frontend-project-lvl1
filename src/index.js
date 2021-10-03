@@ -10,7 +10,7 @@ const process = () => {
   if (CONFIG.round === 1) console.log(game.rules);
 
   console.log(CONFIG.question(game.question));
-  console.log(game.expectedAnswer);
+
   const userAnswer = readlineSync.question(CONFIG.askAnswer);
 
   const checkAnswer = userAnswer === game.expectedAnswer;
