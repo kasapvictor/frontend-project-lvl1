@@ -30,8 +30,6 @@ const process = () => {
   } else {
     console.log(CONFIG.winText());
   }
-
-  return true;
 };
 
 const start = (game) => {
