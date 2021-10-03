@@ -8,11 +8,9 @@ const end = () => {
     console.log(CONFIG.failText());
   }
 
-  return true;
-
-  // console.log(CONFIG.statistic);
-  // console.log('Correct:', CONFIG.correct);
-  // console.log('Wrong:', CONFIG.wrong);
+  console.log(CONFIG.statistic);
+  console.log('Correct:', CONFIG.correct);
+  console.log('Wrong:', CONFIG.wrong);
 };
 
 const check = (userAnswer, answer, correct = false) => {
