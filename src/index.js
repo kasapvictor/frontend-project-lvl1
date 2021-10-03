@@ -28,6 +28,7 @@ const process = () => {
       console.log(CONFIG.failText());
     }
   } else {
+    console.log(CONFIG.correctText);
     console.log(CONFIG.winText());
   }
 };
