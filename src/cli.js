@@ -1,9 +1,11 @@
 import readlineSync from 'readline-sync';
+import CONFIG from "./utils/config.js";
+
 
 const hello = () => {
-  console.log('Welcome to the Brain Games!');
-  const name = readlineSync.question('May I have your name? ');
-  console.log(`Hello, ${name}`);
+  console.log(CONFIG.greeting);
+  CONFIG.name = readlineSync.question(CONFIG.askName);
+  console.log(CONFIG.hello());
 };
 
 export default hello;
