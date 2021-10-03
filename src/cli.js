@@ -1,6 +1,5 @@
 import readlineSync from 'readline-sync';
-import CONFIG from "./utils/config.js";
-
+import CONFIG from './utils/config.js';
 
 const hello = () => {
   console.log(CONFIG.greeting);
