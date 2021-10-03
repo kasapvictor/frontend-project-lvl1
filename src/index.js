@@ -1,5 +1,16 @@
 import readlineSync from 'readline-sync';
 import CONFIG from './utils/config.js';
+import hello from './cli.js';
+
+const check = (userAnswer, expectedAnswer, correct = false) => {
+  if (correct) {
+    CONFIG.correct += 1;
+    console.log(CONFIG.correctText);
+  } else {
+    CONFIG.wrong += 1;
+    console.log(CONFIG.incorrectText(userAnswer, expectedAnswer));
+  }
+};
 
 const end = () => {
   if (CONFIG.correct > CONFIG.wrong) {
@@ -13,16 +24,6 @@ const end = () => {
   console.log('Wrong:', CONFIG.wrong);
 };
 
-const check = (userAnswer, answer, correct = false) => {
-  if (correct) {
-    CONFIG.correct += 1;
-    console.log(CONFIG.correctText);
-  } else {
-    CONFIG.wrong += 1;
-    console.log(CONFIG.incorrectText(userAnswer, answer));
-  }
-};
-
 const process = () => {
   if (!CONFIG.game) return;
 
@@ -34,7 +35,7 @@ const process = () => {
 
   const userAnswer = readlineSync.question(CONFIG.askAnswer);
 
-  check(userAnswer, game.answer, userAnswer === game.answer);
+  check(userAnswer, game.expectedAnswer, userAnswer === game.expectedAnswer);
 
   CONFIG.round += 1;
 
@@ -45,16 +46,12 @@ const process = () => {
   }
 };
 
-const greeting = (game) => {
-  console.log(CONFIG.greeting);
-
-  CONFIG.name = readlineSync.question(CONFIG.askName);
-
-  console.log(CONFIG.hello());
-
+const start = (game) => {
   CONFIG.game = game;
+
+  hello();
 
   process();
 };
 
-export default greeting;
+export default start;

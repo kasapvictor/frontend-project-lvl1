@@ -7,7 +7,7 @@ export default () => {
   const a = getRandom();
   const b = getRandom();
   const question = `${a} ${b}`;
-  const answer = `${getGcd(a, b)}`;
+  const expectedAnswer = `${getGcd(a, b)}`;
 
-  return { question, answer, rules };
+  return { question, expectedAnswer, rules };
 };

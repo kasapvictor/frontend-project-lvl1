@@ -5,7 +5,7 @@ const isEven = (n) => (n % 2 === 0 ? 'yes' : 'no');
 export default () => {
   const rules = 'Answer "yes" if the number is even, otherwise answer "no".';
   const question = getRandom();
-  const answer = isEven(question);
+  const expectedAnswer = isEven(question);
 
-  return { question, answer, rules };
+  return { question, expectedAnswer, rules };
 };

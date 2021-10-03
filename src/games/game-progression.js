@@ -28,7 +28,7 @@ export default () => {
   const task = getProgression();
   const rules = 'What number is missing in the progression?';
   const question = task.progression;
-  const { answer } = task;
+  const { expectedAnswer } = task;
 
-  return { question, answer, rules };
+  return { question, expectedAnswer, rules };
 };
