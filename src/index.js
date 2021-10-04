@@ -19,17 +19,19 @@ const process = () => {
 
   CONFIG.round += 1;
 
-  if (!isFinish) {
-    if (checkAnswer) {
-      console.log(CONFIG.correctText);
-      process();
-    } else {
-      console.log(CONFIG.incorrectText(userAnswer, game.expectedAnswer));
-      console.log(CONFIG.failText());
-    }
-  } else {
+  if (!isFinish && checkAnswer) {
+    console.log(CONFIG.correctText);
+    process();
+  }
+
+  if (isFinish && checkAnswer) {
     console.log(CONFIG.correctText);
     console.log(CONFIG.winText());
+  }
+
+  if (!checkAnswer) {
+    console.log(CONFIG.incorrectText(userAnswer, game.expectedAnswer));
+    console.log(CONFIG.failText());
   }
 };
 
