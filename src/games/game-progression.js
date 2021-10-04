@@ -8,7 +8,7 @@ const getProgression = () => {
   const progression = [];
 
   for (let i = 0; i < MAX_LENGTH; i += 1) {
-    const { length } = progression.length;
+    const { length } = progression;
     const last = progression[length - 1];
 
     if (length > 0) {
@@ -18,10 +18,10 @@ const getProgression = () => {
     }
   }
 
-  const answer = progression[Y];
+  const expectedAnswer = progression[Y];
   progression[Y] = '..';
 
-  return { progression: progression.join(' '), answer: `${answer}` };
+  return { progression: progression.join(' '), expectedAnswer: `${expectedAnswer}` };
 };
 
 export default () => {
