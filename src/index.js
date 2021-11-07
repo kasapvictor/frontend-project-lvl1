@@ -1,6 +1,9 @@
 import readlineSync from 'readline-sync';
 
 const CONFIG = {
+  name: '',
+  welcome: 'Welcome to the Brain Games!',
+  hello: () => `Hello, ${CONFIG.name}!`,
   game: null,
   round: 1,
   limitRound: 3,
@@ -11,9 +14,6 @@ const CONFIG = {
   incorrectText: (userAnswer, expectedAnswer) => `'${userAnswer}' is wrong answer ;(. Correct answer was '${expectedAnswer}'.`,
   winText: () => `Congratulations, ${CONFIG.name}!`,
   failText: () => `Let's try again, ${CONFIG.name}!`,
-  name: '',
-  welcome: 'Welcome to the Brain Games!',
-  hello: () => `Hello, ${CONFIG.name}!`,
 };
 
 const process = () => {
