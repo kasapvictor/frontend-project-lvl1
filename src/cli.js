@@ -1,16 +1,20 @@
 import readlineSync from 'readline-sync';
-import CONFIG from './utils/config.js';
+
+const CONFIG = {
+  name: '',
+  welcome: 'Welcome to the Brain Games!',
+  askName: 'May I have your name? \n',
+  hello: () => `Hello, ${CONFIG.name}!`,
+};
 
 const hello = () => {
-  const WELCOME_TEXT = 'Welcome to the Brain Games!';
-  const ASK_NAME = 'May I have your name? \n';
-  const HELLO_TEXT = (name) => `Hello, ${name}!`;
+  console.log(CONFIG.welcome);
 
-  console.log(WELCOME_TEXT);
+  const userName = readlineSync.question(CONFIG.askName);
 
-  CONFIG.name = readlineSync.question(ASK_NAME);
+  CONFIG.name = userName !== '' ? userName : 'John Doe';
 
-  console.log(HELLO_TEXT(CONFIG.name));
+  console.log(CONFIG.hello());
 };
 
 export default hello;

@@ -1,6 +1,18 @@
 import readlineSync from 'readline-sync';
-import CONFIG from './utils/config.js';
 import hello from './cli.js';
+
+const CONFIG = {
+  game: null,
+  round: 1,
+  limitRound: 3,
+  question: (question) => (`Question: ${question}`),
+  askName: 'May I have your name? \n',
+  askAnswer: 'Your answer: ',
+  correctText: 'Correct!',
+  incorrectText: (userAnswer, expectedAnswer) => `'${userAnswer}' is wrong answer ;(. Correct answer was '${expectedAnswer}'.`,
+  winText: () => `Congratulations, ${CONFIG.name}!`,
+  failText: () => `Let's try again, ${CONFIG.name}!`,
+};
 
 const process = () => {
   if (!CONFIG.game) return;
