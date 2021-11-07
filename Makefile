@@ -3,11 +3,17 @@
 # https://www.youtube.com/watch?v=pK9mF5aK05Q
 # https://ru.makefile.site/
 # sudo npm link --force
+
+setup: install publish link
+
 install: # установка
 	npm ci
 
-publish: # публикация пакета, может потребоваться дополнительная команда sudo npm link --force
+publish: # публикация пакета
 	npm publish --dry-run
+
+link: # может потребоваться дополнительная команда sudo npm link --force
+	npm link --force
 
 lint: # проверка стиля кода
 	npx eslint .
@@ -17,3 +23,4 @@ lint-fix: # проверка стиля кода + исправление
 
 brain-games: # вызов приложения
 	node bin/brain-games.js
+
