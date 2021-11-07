@@ -1,5 +1,4 @@
 import readlineSync from 'readline-sync';
-import hello from './cli.js';
 
 const CONFIG = {
   game: null,
@@ -12,6 +11,9 @@ const CONFIG = {
   incorrectText: (userAnswer, expectedAnswer) => `'${userAnswer}' is wrong answer ;(. Correct answer was '${expectedAnswer}'.`,
   winText: () => `Congratulations, ${CONFIG.name}!`,
   failText: () => `Let's try again, ${CONFIG.name}!`,
+  name: '',
+  welcome: 'Welcome to the Brain Games!',
+  hello: () => `Hello, ${CONFIG.name}!`,
 };
 
 const process = () => {
@@ -50,7 +52,13 @@ const process = () => {
 const start = (game) => {
   CONFIG.game = game;
 
-  hello();
+  console.log(CONFIG.welcome);
+
+  const userName = readlineSync.question(CONFIG.askName);
+
+  CONFIG.name = userName !== '' ? userName : 'John Doe';
+
+  console.log(CONFIG.hello());
 
   process();
 
