@@ -3,21 +3,17 @@
 # https://www.youtube.com/watch?v=pK9mF5aK05Q
 # https://ru.makefile.site/
 # sudo npm link --force
-install:
+install: # установка
 	npm ci
-brain-games:
-	node bin/brain-games.js
-brain-even:
-	node bin/brain-even.js
-brain-gcd:
-	node bin/brain-gcd.js
-brain-progression:
-	node bin/brain-progression.js
-brain-prime:
-	node bin/brain-prime.js
-publish:
+
+publish: # публикация пакета, может потребоваться дополнительная команда sudo npm link --force
 	npm publish --dry-run
-lint:
+
+lint: # проверка стиля кода
 	npx eslint .
-lint-fix:
+
+lint-fix: # проверка стиля кода + исправление
 	npx eslint . --fix
+
+brain-games: # вызов приложения
+	node bin/brain-games.js
