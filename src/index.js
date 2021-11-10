@@ -3,7 +3,7 @@ import readlineSync from 'readline-sync';
 const start = (game) => {
   console.log('Welcome to the Brain Games!');
 
-  const askName = readlineSync.question('May I have your name? \n');
+  const askName = readlineSync.question('May I have your name? \nYour Name: ');
   const userName = askName.length !== 0 ? askName : 'John Doe';
 
   console.log(`Hello, ${userName}!`);
@@ -14,14 +14,15 @@ const start = (game) => {
     const dataGame = game();
     const question = dataGame[0];
     const answer = dataGame[1];
-    // console.log('answer', answer);
+    // console.log('answer:', answer);
     const rules = dataGame[2];
-    const userAnswer = readlineSync.question(`${question}\n`);
-    const checkAnswer = userAnswer === answer;
 
     if (i === 0) {
       console.log(rules);
     }
+
+    const userAnswer = readlineSync.question(`Question: ${question}\nYour answer: `);
+    const checkAnswer = userAnswer === answer;
 
     if (i < ROUNDS && checkAnswer) {
       console.log('Correct!');
