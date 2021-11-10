@@ -1,66 +1,42 @@
 import readlineSync from 'readline-sync';
 
-const CONFIG = {
-  name: '',
-  welcome: 'Welcome to the Brain Games!',
-  hello: () => `Hello, ${CONFIG.name}!`,
-  game: null,
-  round: 1,
-  limitRound: 3,
-  question: (question) => (`Question: ${question}`),
-  askName: 'May I have your name? \n',
-  askAnswer: 'Your answer: ',
-  correctText: 'Correct!',
-  incorrectText: (userAnswer, expectedAnswer) => `'${userAnswer}' is wrong answer ;(. Correct answer was '${expectedAnswer}'.`,
-  winText: () => `Congratulations, ${CONFIG.name}!`,
-  failText: () => `Let's try again, ${CONFIG.name}!`,
-};
-
-const process = () => {
-  if (!CONFIG.game) return;
-
-  const game = CONFIG.game();
-
-  if (CONFIG.round === 1) console.log(game.rules);
-
-  console.log(CONFIG.question(game.question));
-
-  const userAnswer = readlineSync.question(CONFIG.askAnswer);
-
-  const checkAnswer = userAnswer === game.expectedAnswer;
-
-  const isFinish = CONFIG.limitRound <= CONFIG.round;
-
-  CONFIG.round += 1;
-
-  if (!isFinish && checkAnswer) {
-    console.log(CONFIG.correctText);
-    process();
-  }
-
-  if (isFinish && checkAnswer) {
-    console.log(CONFIG.correctText);
-    console.log(CONFIG.winText());
-  }
-
-  if (!checkAnswer) {
-    console.log(CONFIG.incorrectText(userAnswer, game.expectedAnswer));
-    console.log(CONFIG.failText());
-  }
-};
-
 const start = (game) => {
-  CONFIG.game = game;
+  console.log('Welcome to the Brain Games!');
 
-  console.log(CONFIG.welcome);
+  const askName = readlineSync.question('May I have your name? \n');
+  const userName = askName.length !== 0 ? askName : 'John Doe';
 
-  const userName = readlineSync.question(CONFIG.askName);
+  console.log(`Hello, ${userName}!`);
 
-  CONFIG.name = userName !== '' ? userName : 'John Doe';
+  const ROUNDS = 3;
 
-  console.log(CONFIG.hello());
+  for (let i = 0; i < ROUNDS; i += 1) {
+    const dataGame = game();
+    const question = dataGame[0];
+    const answer = dataGame[1];
+    // console.log('answer', answer);
+    const rules = dataGame[2];
+    const userAnswer = readlineSync.question(`${question}\n`);
+    const checkAnswer = userAnswer === answer;
 
-  process();
+    if (i === 0) {
+      console.log(rules);
+    }
+
+    if (i < ROUNDS && checkAnswer) {
+      console.log('Correct!');
+
+      if (i + 1 === ROUNDS) {
+        console.log(`Congratulations, ${userName}!`);
+      }
+    }
+
+    if (!checkAnswer) {
+      console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${answer}'.`);
+      console.log(`Let's try again, ${userName}!`);
+      return false;
+    }
+  }
 
   return true;
 };

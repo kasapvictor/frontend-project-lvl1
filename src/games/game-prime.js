@@ -19,5 +19,5 @@ export default () => {
   const question = `${n}`;
   const expectedAnswer = `${isPrime(n) ? 'yes' : 'no'}`;
 
-  return { question, expectedAnswer, rules };
+  return [question, expectedAnswer, rules];
 };

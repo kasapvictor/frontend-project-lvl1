@@ -25,10 +25,10 @@ export default () => {
   const a = getRandom();
   const b = getRandom();
   const s = SYMBOL[getRandom(0, 2)];
-
   const rules = 'What is the result of the expression?';
+
   const expectedAnswer = `${calc(a, b, s)}`;
   const question = `${a} ${s} ${b}`;
 
-  return { question, expectedAnswer, rules };
+  return [question, expectedAnswer, rules];
 };

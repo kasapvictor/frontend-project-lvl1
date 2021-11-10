@@ -18,9 +18,6 @@ const getProgression = () => {
     }
   }
 
-  console.log('START', START, 'MAX_LENGTH', MAX_LENGTH, 'expectedAnswer', progression[Y]);
-  console.log('progression', progression);
-
   const expectedAnswer = progression[Y];
   progression[Y] = '..';
 
@@ -33,5 +30,5 @@ export default () => {
   const question = task.progression;
   const { expectedAnswer } = task;
 
-  return { question, expectedAnswer, rules };
+  return [question, expectedAnswer, rules];
 };

@@ -9,5 +9,5 @@ export default () => {
   const question = `${a} ${b}`;
   const expectedAnswer = `${getGcd(a, b)}`;
 
-  return { question, expectedAnswer, rules };
+  return [question, expectedAnswer, rules];
 };
