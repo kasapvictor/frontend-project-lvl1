@@ -16,7 +16,7 @@ const start = (game, rules) => {
     const gameData = game();
     const question = gameData[0];
     const answer = gameData[1];
-    console.log('answer:', answer);
+    // console.log('answer:', answer);
 
     console.log(`Question: ${question}`);
     const userAnswer = readlineSync.question('Your answer: ');
