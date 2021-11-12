@@ -18,25 +18,20 @@ const start = (game, rules) => {
     const answer = gameData[1];
     console.log('answer:', answer);
 
-    const userAnswer = readlineSync.question(`Question: ${question}\nYour answer: `);
+    console.log(`Question: ${question}`);
+    const userAnswer = readlineSync.question('Your answer: ');
     const checkAnswer = userAnswer === answer;
-
-    if (i < ROUNDS && checkAnswer) {
-      console.log('Correct!');
-
-      if (i + 1 === ROUNDS) {
-        console.log(`Congratulations, ${userName}!`);
-      }
-    }
 
     if (!checkAnswer) {
       console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${answer}'.`);
       console.log(`Let's try again, ${userName}!`);
-      return false;
+      return;
     }
+
+    console.log('Correct!');
   }
 
-  return true;
+  console.log(`Congratulations, ${userName}!`);
 };
 
 export default start;
