@@ -1,6 +1,8 @@
 import getRandom from '../utils/random.js';
 import start from '../index.js';
 
+const RULES = 'Answer "yes" if given number is prime. Otherwise answer "no".';
+
 const isPrime = (n) => {
   let prime = true;
 
@@ -15,12 +17,11 @@ const isPrime = (n) => {
 };
 
 const game = () => {
-  const rules = 'Answer "yes" if given number is prime. Otherwise answer "no".';
   const n = getRandom();
   const question = `${n}`;
   const expectedAnswer = `${isPrime(n) ? 'yes' : 'no'}`;
 
-  return [question, expectedAnswer, rules];
+  return [question, expectedAnswer];
 };
 
-export default () => start(game);
+export default () => start(game, RULES);
