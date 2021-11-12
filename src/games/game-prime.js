@@ -4,6 +4,10 @@ import start from '../index.js';
 const RULES = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
 const isPrime = (n) => {
+  if (n === 1) {
+    return false;
+  }
+
   let prime = true;
 
   for (let i = 2; i < n; i += 1) {
