@@ -1,4 +1,5 @@
 import getRandom from '../utils/random.js';
+import start from '../index.js';
 
 const getProgression = () => {
   const MAX_LENGTH = 10;
@@ -24,7 +25,7 @@ const getProgression = () => {
   return { progression: progression.join(' '), expectedAnswer: `${expectedAnswer}` };
 };
 
-export default () => {
+const game = () => {
   const task = getProgression();
   const rules = 'What number is missing in the progression?';
   const question = task.progression;
@@ -32,3 +33,5 @@ export default () => {
 
   return [question, expectedAnswer, rules];
 };
+
+export default () => start(game);

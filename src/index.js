@@ -11,11 +11,11 @@ const start = (game) => {
   const ROUNDS = 3;
 
   for (let i = 0; i < ROUNDS; i += 1) {
-    const dataGame = game();
-    const question = dataGame[0];
-    const answer = dataGame[1];
+    const gameData = game();
+    const question = gameData[0];
+    const answer = gameData[1];
     // console.log('answer:', answer);
-    const rules = dataGame[2];
+    const rules = gameData[2];
 
     if (i === 0) {
       console.log(rules);

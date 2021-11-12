@@ -1,4 +1,5 @@
 import getRandom from '../utils/random.js';
+import start from '../index.js';
 
 const calc = (a, b, symbol) => {
   let result = false;
@@ -20,7 +21,7 @@ const calc = (a, b, symbol) => {
   return result;
 };
 
-export default () => {
+const game = () => {
   const SYMBOL = ['+', '-', '*'];
   const a = getRandom();
   const b = getRandom();
@@ -32,3 +33,5 @@ export default () => {
 
   return [question, expectedAnswer, rules];
 };
+
+export default () => start(game);
