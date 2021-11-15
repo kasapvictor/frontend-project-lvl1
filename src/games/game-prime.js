@@ -20,12 +20,12 @@ const isPrime = (n) => {
   return prime;
 };
 
-const game = () => {
+const play = () => {
   const n = getRandom();
   const question = `${n}`;
-  const expectedAnswer = `${isPrime(n) ? 'yes' : 'no'}`;
+  const expectedAnswer = isPrime(n) ? 'yes' : 'no';
 
   return [question, expectedAnswer];
 };
 
-export default () => start(game, RULES);
+export default () => start(play, RULES);

@@ -2,37 +2,31 @@ import getRandom from '../utils/random.js';
 import start from '../index.js';
 
 const RULES = 'What is the result of the expression?';
+const SYMBOL = ['+', '-', '*'];
 
 const calc = (a, b, symbol) => {
-  let result = false;
-
   switch (symbol) {
     case '+':
-      result = a + b;
-      break;
+      return a + b;
     case '-':
-      result = a - b;
-      break;
+      return a - b;
     case '*':
-      result = a * b;
-      break;
+      return a * b;
     default:
-      return result;
+      throw new Error(`operation ${symbol} is not supported`);
   }
-
-  return result;
 };
 
-const game = () => {
-  const SYMBOL = ['+', '-', '*'];
-  const a = getRandom();
-  const b = getRandom();
-  const s = SYMBOL[getRandom(0, 2)];
+const play = () => {
+  const numberA = getRandom();
+  const numberB = getRandom();
+  const operator = SYMBOL[getRandom(0, 2)];
+  const resultCalc = calc(numberA, numberB, operator);
 
-  const expectedAnswer = `${calc(a, b, s)}`;
-  const question = `${a} ${s} ${b}`;
+  const expectedAnswer = String(resultCalc);
+  const question = `${numberA} ${operator} ${numberB}`;
 
   return [question, expectedAnswer];
 };
 
-export default () => start(game, RULES);
+export default () => start(play, RULES);
