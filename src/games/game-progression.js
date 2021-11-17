@@ -22,14 +22,7 @@ const play = () => {
   const step = getRandom(2, 5);
   const hiddenIndex = getRandom(0, MAX_LENGTH - 1);
   const progression = getProgression(from, step, hiddenIndex);
-  let expectedAnswer = '';
-
-  for (let i = 0; i < MAX_LENGTH; i += 1) {
-    const current = from + (step * i);
-    if (i === hiddenIndex) {
-      expectedAnswer = String(current);
-    }
-  }
+  const expectedAnswer = `${from + (step * hiddenIndex)}`; // Dinislam
 
   return [progression, expectedAnswer];
 };
